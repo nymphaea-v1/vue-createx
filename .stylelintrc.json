@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "stylelint-config-html/html",
+    "stylelint-config-standard-vue/scss",
+    "stylelint-config-rational-order"
+  ],
+  "rules": {
+    "color-hex-length": "long",
+    "declaration-empty-line-before": null,
+    "selector-class-pattern": null,
+    "selector-id-pattern": null,
+    "plugin/rational-order": [true, {
+      "border-in-box-model": true,
+      "empty-line-between-groups": true,
+      "no-empty-lines-between-properties": true
+    }]
+  }
+}

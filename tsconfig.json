@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "./distribution/",
+    "module": "ESNext",
+    "target": "ESNext",
+    "allowJs": true,
+    "strict": true,
+    "moduleResolution": "Node",
+    "baseUrl": ".",
+    "paths": {
+      "components": ["source/components/*"],
+      "views": ["source/views/*"],
+      "styles": ["source/assets/styles/*"],
+      "icons": ["source/assets/icons/*"]
+    }
+  }
+}
