@@ -17,7 +17,7 @@ const icon = computed(() => {
 })
 </script>
 
-<style lang="scss">
+<style>
 #__SVG_SPRITE_NODE__ symbol path {
   fill: currentcolor;
 }

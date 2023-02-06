@@ -1,0 +1,65 @@
+%container {
+  max-width: 1250px;
+  margin: 0 auto;
+	padding: 0 10px;
+}
+
+%button-reset {
+	border: none;
+
+	color: inherit;
+	font-weight: bold;
+	font-size: inherit;
+	font-family: inherit;
+
+	background: none;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+%hoverable {
+	&:hover {
+		color: $primary;
+
+	cursor: pointer;
+	}
+}
+
+%text-lead {
+	color: $gray900;
+	font-size: 20px;
+	line-height: 150%;
+}
+
+%text-large {
+	color: $gray700;
+	font-size: 20px;
+	line-height: 150%;
+}
+
+%text-small {
+	color: $gray700;
+	font-size: 14px;
+	line-height: 150%;
+}
+
+%text-bold {
+	font-weight: 700;
+}
+
+%text-black-bold {
+	color: $gray900;
+	font-weight: 900;
+}
+
+%large-number {
+	margin-right: 10px;
+
+	font-weight: 900;
+	font-size: 46px;
+	line-height: 130%;
+	vertical-align: middle;
+
+}

@@ -21,7 +21,8 @@ withDefaults(defineProps<Props>(), {
 
 <style scoped lang="scss">
 .button {
-  @include button_reset;
+  @extend %button-reset;
+
   width: var(--button-width);
   height: var(--button-height);
   border-radius: 4px;
@@ -30,6 +31,11 @@ withDefaults(defineProps<Props>(), {
   letter-spacing: 0.5px;
 
   transition: all 0.3s ease;
+
+  &:hover {
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 0.6em 1.2em -0.6em $primary;
+  }
 }
 
 /* button type: bold, outline */
@@ -51,7 +57,7 @@ withDefaults(defineProps<Props>(), {
   color: $primary;
 
   &:hover {
-    border: none;
+    border-color: transparent;
 
     color: white;
 

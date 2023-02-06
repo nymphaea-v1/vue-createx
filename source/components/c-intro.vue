@@ -64,7 +64,7 @@ const statistics = {
   position: relative;
 
   &__container {
-    @include container;
+    @extend %container;
   }
 
   &__background {
@@ -98,8 +98,6 @@ const statistics = {
   }
 
   &__heading {
-    @include black-bold;
-
     width: 500px;
     height: 250px;
     margin-bottom: 38px;
@@ -113,12 +111,7 @@ const statistics = {
   }
 
   &__about-button {
-    --button-width: 148px;
     margin-right: 24px;
-  }
-
-  &__explore-button {
-    --button-width: 200px;
   }
 
   &__statistic {
@@ -136,17 +129,13 @@ const statistics = {
   list-style: none;
 
   &__number {
-    @include black-bold;
-    margin-right: 10px;
-
-    font-size: 46px;
-    vertical-align: middle;
+    @extend %large-number;
   }
 
   &__dot {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     margin: 0 auto;
     border-radius: 50%;
 

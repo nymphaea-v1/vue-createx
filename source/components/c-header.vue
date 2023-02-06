@@ -9,7 +9,7 @@
       </router-link>
       <nav class="header__nav">
         <router-link
-          v-for="(link, text) in navLinks"
+          v-for="(link, text) in siteLinks"
           :key="link"
           :to="link"
           class="header__nav-link"
@@ -38,7 +38,7 @@
 import CButton from 'components/ui/c-button.vue'
 import CIcon from 'components/ui/c-icon.vue'
 
-const navLinks = {
+const siteLinks = {
   'About Us': '/about',
   Courses: '/courses',
   Events: '/events',
@@ -54,14 +54,14 @@ const navLinks = {
 
   width: 100%;
 
+  font-weight: 900;
+
   &__container {
-    @include container;
+    @extend %container;
 
     display: flex;
     align-items: center;
     height: 90px;
-
-    font-weight: 900;
   }
 
   &__logo {
@@ -76,12 +76,11 @@ const navLinks = {
   }
 
   &__button {
-    --button-width: 206px;
     margin-right: 36px;
   }
 
   &__login {
-    @include hoverable;
+    @extend %hoverable;
 
     & > * {
       vertical-align: middle;

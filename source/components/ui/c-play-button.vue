@@ -31,9 +31,9 @@ withDefaults(defineProps<Props>(), {
 $play-button-outline: rgba($primary, 0.12);
 
 .play-button {
-  @include button_reset;
-  @include hoverable;
-  @include bold;
+  @extend %button-reset;
+  @extend %hoverable;
+  @extend %text-bold;
 
   &__icon-wrapper {
     display: inline-block;
