@@ -1,16 +1,20 @@
 # vue-createx
 
+Website from Figma design for online courses **Createx**.
+<br>
+Currently in progress! I'm planning to add adaptivity/responsiveness after I finish coding layout.
+
 Верстка по макету онлайн-курсов **Createx**.
+<br>
+В процессе! На данный момент я доверстываю макет и планирую добавить адаптивность/отзывчивость после.
 
-В процессе! На данный момент я доверстываю макет и планирую добавить адаптивность/отзывчивость.
-
-## Используемые технологии
+## Tech stack / Использованные технологии
 - Vue.js 3
 - TypeScript
-- Препроцессор SASS (SCSS)
+- SCSS
 - webpack
 - ESLint, Stylelint
 
-## Ссылки
-- [Макет в Figma](https://www.figma.com/file/2ZWX21Kfd6rLZVAm7hO8lz/Free-%231.-Online-course)
-- Макет был найден в этом [блоге](https://blog.maxgraph.ru/besplatnye-makety-figma-dlya-verstki-sajta-4/)
+## Links / Ссылки
+- [Figma](https://www.figma.com/file/2ZWX21Kfd6rLZVAm7hO8lz/Free-%231.-Online-course)
+- Website design was found [there](https://blog.maxgraph.ru/besplatnye-makety-figma-dlya-verstki-sajta-4/) / Макет был найден [здесь](https://blog.maxgraph.ru/besplatnye-makety-figma-dlya-verstki-sajta-4/)
