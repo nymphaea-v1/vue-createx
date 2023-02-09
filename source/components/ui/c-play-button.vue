@@ -32,8 +32,8 @@ $play-button-outline: rgba($primary, 0.12);
 
 .play-button {
   @extend %button-reset;
-  @extend %hoverable;
   @extend %text-bold;
+  @include hoverable;
 
   &__icon-wrapper {
     display: inline-block;

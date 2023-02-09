@@ -4,7 +4,7 @@
     <div class="intro__container">
       <div class="intro__image-wrapper">
         <div class="intro__image">
-          <img src="../assets/images/illustrations/intro.svg">
+          <img src="~images/illustrations/intro.svg">
         </div>
       </div>
       <c-play-button class="intro__showreel-button">
@@ -77,7 +77,7 @@ const statistics = {
     height: 100%;
 
     background-image:
-      url("../assets/images/background-shapes/intro-background.svg"),
+      url("images/background-shapes/intro-background.svg"),
       $background-gradient;
     background-size: cover;
     opacity: 0.2;
@@ -111,7 +111,12 @@ const statistics = {
   }
 
   &__about-button {
+    width: 148px;
     margin-right: 24px;
+  }
+
+  &__explore-button {
+    width: 200px;
   }
 
   &__statistic {
@@ -142,5 +147,4 @@ const statistics = {
     background-color: $primary;
   }
 }
-
 </style>

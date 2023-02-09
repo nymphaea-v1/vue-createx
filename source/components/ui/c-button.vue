@@ -32,7 +32,12 @@ withDefaults(defineProps<Props>(), {
 
   transition: all 0.3s ease;
 
-  &:hover {
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  &:hover:not(:disabled) {
     /* offset-x | offset-y | blur-radius | spread-radius | color */
     box-shadow: 0 0.6em 1.2em -0.6em $primary;
   }
@@ -46,7 +51,7 @@ withDefaults(defineProps<Props>(), {
   background-image: $button-gradient;
   background-size: 200%;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background-position: 100%;
   }
 }
@@ -56,7 +61,7 @@ withDefaults(defineProps<Props>(), {
 
   color: $primary;
 
-  &:hover {
+  &:hover:not(:disabled) {
     border-color: transparent;
 
     color: white;

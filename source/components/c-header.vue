@@ -5,7 +5,7 @@
         class="header__logo"
         to="/"
       >
-        <img src="../assets/images/logo.svg">
+        <img src="~images/logo.svg">
       </router-link>
       <nav class="header__nav">
         <router-link
@@ -23,12 +23,12 @@
       >
         Get consultation
       </c-button>
-      <span class="header__login">
+      <span class="header__login-button login-button">
         <c-icon
-          class="header__login-icon"
+          class="login-button__icon"
           name="profile"
         />
-        <span class="header__login-text">Log in / Register</span>
+        <span class="login-button__text">Log in / Register</span>
       </span>
     </div>
   </header>
@@ -39,11 +39,11 @@ import CButton from 'components/ui/c-button.vue'
 import CIcon from 'components/ui/c-icon.vue'
 
 const siteLinks = {
-  'About Us': '/about',
-  Courses: '/courses',
-  Events: '/events',
-  Blog: '/blog',
-  Contacts: '/contact'
+  'About Us': '/',
+  Courses: '/',
+  Events: '/',
+  Blog: '/',
+  Contacts: '/'
 }
 </script>
 
@@ -76,20 +76,13 @@ const siteLinks = {
   }
 
   &__button {
+    width: 206px;
     margin-right: 36px;
   }
+}
 
-  &__login {
-    @extend %hoverable;
-
-    & > * {
-      vertical-align: middle;
-    }
-  }
-
-  &__login-icon {
-    height: 20px;
-    margin-right: 10px;
-  }
+.login-button {
+  @include hoverable;
+  @include text-icon(20px, 10px);
 }
 </style>

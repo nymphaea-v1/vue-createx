@@ -3,11 +3,13 @@
     <div class="about__container">
       <img
         class="about__image"
-        src="../assets/images/illustrations/about.png"
+        src="~images/illustrations/about.png"
       >
       <div class="about__main">
-        <h6>Who we are</h6>
-        <h1 class="about__heading">
+        <h6 class="about__sub-heading">
+          Who we are
+        </h6>
+        <h1 class="about__main-heading">
           Why Createx?
         </h1>
         <c-list
@@ -45,6 +47,10 @@ const features = [
 
     display: flex;
     justify-content: space-between;
+  }
+
+  &__main-heading {
+    margin-bottom: 40px;
   }
 
   &__feature-list {
