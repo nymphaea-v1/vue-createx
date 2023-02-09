@@ -12,6 +12,7 @@ const components = path.resolve(__source, 'components')
 const views = path.resolve(__source, 'views')
 const styles = path.resolve(__assets, 'styles')
 const icons = path.resolve(__assets, 'icons')
+const images = path.resolve(__assets, 'images')
 
 module.exports = {
   mode: 'development',
@@ -71,7 +72,7 @@ module.exports = {
     ]
   },
   resolve: {
-    alias: { components, views, styles, icons },
+    alias: { components, views, styles, icons, images },
     extensions: ['.tsx', '.ts', '.js']
   },
   plugins: [

@@ -11,7 +11,8 @@
       "components": ["source/components/*"],
       "views": ["source/views/*"],
       "styles": ["source/assets/styles/*"],
-      "icons": ["source/assets/icons/*"]
+      "icons": ["source/assets/icons/*"],
+      "images": ["source/assets/images/*"]
     }
   }
 }
