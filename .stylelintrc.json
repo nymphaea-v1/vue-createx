@@ -1,6 +1,7 @@
 {
   "extends": [
-    "stylelint-config-html/html",
+    "stylelint-config-html",
+    "stylelint-config-standard-scss",
     "stylelint-config-standard-vue/scss",
     "stylelint-config-rational-order"
   ],
@@ -14,5 +15,13 @@
       "empty-line-between-groups": true,
       "no-empty-lines-between-properties": true
     }]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["source/assets/styles/_colors.scss"],
+      "rules": {
+        "scss/dollar-variable-empty-line-before": null
+      }
+    }
+  ]
 }

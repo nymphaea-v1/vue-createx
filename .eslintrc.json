@@ -29,6 +29,10 @@
     {
       "files": ["source/views/**/*.vue"],
       "rules": { "vue/multi-word-component-names": "off" }
+    },
+    {
+      "files": ["source/composables/**/*.ts"],
+      "rules": { "@typescript-eslint/explicit-function-return-type": "off" }
     }
   ]
 }
