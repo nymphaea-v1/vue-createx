@@ -77,7 +77,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'title',
+      title: 'Createx',
+      favicon: 'icons/heart.svg',
       template: path.resolve(__source, 'index.html')
     }),
     new VueLoaderPlugin(),
