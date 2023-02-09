@@ -1,65 +1,79 @@
 %container {
   max-width: 1250px;
   margin: 0 auto;
-	padding: 0 10px;
+  padding: 0 10px;
 }
 
 %button-reset {
-	border: none;
+  border: none;
 
-	color: inherit;
-	font-weight: bold;
-	font-size: inherit;
-	font-family: inherit;
+  color: inherit;
+  font-weight: bold;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
 
-	background: none;
+  background: none;
 
-	&:hover {
-		cursor: pointer;
-	}
+  &:hover {
+    cursor: pointer;
+  }
 }
 
-%hoverable {
-	&:hover {
-		color: $primary;
+%input-reset {
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
 
-	cursor: pointer;
-	}
+  &:focus {
+    outline: none;
+  }
 }
 
 %text-lead {
-	color: $gray900;
-	font-size: 20px;
-	line-height: 150%;
+  color: $gray900;
+  font-size: 20px;
+  line-height: 150%;
 }
 
 %text-large {
-	color: $gray700;
-	font-size: 20px;
-	line-height: 150%;
+  color: $gray700;
+  font-size: 20px;
+  line-height: 150%;
 }
 
 %text-small {
-	color: $gray700;
-	font-size: 14px;
-	line-height: 150%;
+  color: $gray700;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+%text-extrasmall {
+  font-size: 12px;
+  line-height: 150%;
+}
+
+%text-extraextrasmall {
+  font-size: 10px;
+  line-height: 150%;
 }
 
 %text-bold {
-	font-weight: 700;
+  font-weight: 700;
 }
 
 %text-black-bold {
-	color: $gray900;
-	font-weight: 900;
+  color: $gray900;
+  font-weight: 900;
 }
 
 %large-number {
-	margin-right: 10px;
+  margin-right: 10px;
 
-	font-weight: 900;
-	font-size: 46px;
-	line-height: 130%;
-	vertical-align: middle;
-
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 130%;
+  vertical-align: middle;
 }
