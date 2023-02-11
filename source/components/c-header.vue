@@ -1,7 +1,7 @@
 <template>
   <header
     class="header"
-    :class="{ 'header_fixed': isFixed, 'header_menu-opened': isMenuOpened }"
+    :class="{ 'header_fixed': isHeaderFixed, 'header_menu-opened': isMenuOpened }"
   >
     <div class="header__container">
       <router-link
@@ -72,7 +72,7 @@ import CButton from 'components/ui/c-button.vue'
 import CIcon from 'components/ui/c-icon.vue'
 import CMenuButton from 'components/ui/c-menu-button.vue'
 
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const siteLinks = {
   'About Us': '/',
@@ -82,16 +82,16 @@ const siteLinks = {
   Contacts: '/'
 }
 
-const isFixed = ref(document.documentElement.scrollTop > 200)
+const isMenuOpened = ref(false)
+const isUpperSectionScrolled = ref(false)
+const isHeaderFixed = computed(() => isUpperSectionScrolled.value || isMenuOpened.value)
 
-const checkScrollForFixed = () => {
-  isFixed.value = document.documentElement.scrollTop > 1000
+const checkForScrolled = () => {
+  isUpperSectionScrolled.value = document.documentElement.scrollTop > 1000
 }
 
-onMounted(() => window.addEventListener('scroll', checkScrollForFixed))
-onUnmounted(() => window.removeEventListener('scroll', checkScrollForFixed))
-
-const isMenuOpened = ref(false)
+onMounted(() => window.addEventListener('scroll', checkForScrolled))
+onUnmounted(() => window.removeEventListener('scroll', checkForScrolled))
 </script>
 
 <style scoped lang="scss">
@@ -155,9 +155,6 @@ const isMenuOpened = ref(false)
   animation: 0.4s move-from-top ease;
 
   & .header__container {
-    padding-top: 9px;
-    padding-bottom: 9px;
-
     background-color: $white;
   }
 }
