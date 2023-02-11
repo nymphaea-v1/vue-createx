@@ -46,7 +46,13 @@ const features = [
     @extend %container;
 
     display: flex;
+    gap: 20px;
     justify-content: space-between;
+  }
+
+  &__image {
+    min-width: 0;
+    object-fit: cover;
   }
 
   &__main-heading {
