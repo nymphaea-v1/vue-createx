@@ -189,7 +189,7 @@ onUnmounted(() => window.removeEventListener('scroll', checkForScrolled))
   }
 }
 
-@media #{$break-laptop-max} {
+@media (max-width: $break-laptop-max) {
   .header {
     &__container {
       transition: background-color 0s 0.15s;
