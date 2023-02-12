@@ -5,32 +5,43 @@
         <h6 class="courses__sub-heading">
           Ready to learn?
         </h6>
+
         <h1 class="courses__main-heading">
           Featured Courses
         </h1>
+
         <c-button
-          class="courses__button"
+          class="courses__header-button"
           type="outline"
           size="large"
         >
           View all courses
         </c-button>
       </div>
+
       <div class="courses__list">
-        <c-course-card-horisontal
+        <c-course-card
           v-for="(course, index) in courses"
           :key="index"
           class="courses__item"
           :course="course"
         />
       </div>
+
+      <c-button
+        class="courses__footer-button"
+        type="outline"
+        size="large"
+      >
+        View all courses
+      </c-button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import CButton from 'components/ui/c-button.vue'
-import cCourseCardHorisontal from 'components/ui/c-course-card-horisontal.vue'
+import cCourseCard from 'components/ui/c-course-card.vue'
 import { useTestInfo } from '../composables/use-test-info'
 
 const courses = useTestInfo().courses
@@ -63,11 +74,34 @@ const courses = useTestInfo().courses
     flex-wrap: wrap;
     gap: 2.4vw;
     justify-content: space-between;
+    margin-bottom: 30px;
   }
 
   &__item {
     flex: 1 1 calc(50% - 2.4vw);
-    min-width: 450px;
+    width: 100%;
+  }
+
+  &__footer-button {
+    display: none;
+  }
+}
+
+@media (max-width: $break-phone-max) {
+  .courses {
+    margin: 90px 0;
+
+    &__header-button {
+      display: none;
+    }
+
+    &__footer-button {
+      display: inherit;
+    }
+
+    &__item:nth-child(n + 4) {
+      display: none;
+    }
   }
 }
 </style>

@@ -26,17 +26,12 @@ const emitUpdate = (activeTab: number) => {
   @extend %text-bold;
 
   display: flex;
-  height: 46px;
 
   color: $gray600;
 
   &__item {
-    display: flex;
     flex-grow: 1;
-    align-items: center;
-    justify-content: center;
-    width: min-content;
-    padding: 0 10px;
+    padding: 6px 8px;
     border: 1px solid transparent;
     border-radius: 4px;
 

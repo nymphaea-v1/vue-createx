@@ -55,6 +55,7 @@
         >
           {{ text }}
         </router-link>
+
         <span class="pop-menu__login-button login-button">
           <c-icon
             class="login-button__icon"
@@ -62,6 +63,13 @@
           />
           <span class="login-button__text">Log in / Register</span>
         </span>
+
+        <c-button
+          class="pop-menu__consultation-button"
+          size="large"
+        >
+          Get consultation
+        </c-button>
       </nav>
     </div>
   </header>
@@ -110,6 +118,7 @@ onUnmounted(() => window.removeEventListener('scroll', checkForScrolled))
 
     display: flex;
     align-items: center;
+    min-height: 70px;
     padding-top: 19px;
     padding-bottom: 19px;
   }
@@ -130,7 +139,7 @@ onUnmounted(() => window.removeEventListener('scroll', checkForScrolled))
   }
 
   &__consultation-button {
-    width: 206px;
+    --button-width: 206px;
     margin-right: 36px;
   }
 
@@ -187,11 +196,18 @@ onUnmounted(() => window.removeEventListener('scroll', checkForScrolled))
 
     line-height: 60px;
   }
+
+  &__consultation-button {
+    display: none;
+  }
 }
 
 @media (max-width: $break-laptop-max) {
   .header {
     &__container {
+      padding-top: 9px;
+      padding-bottom: 9px;
+
       transition: background-color 0s 0.15s;
     }
 
@@ -204,12 +220,9 @@ onUnmounted(() => window.removeEventListener('scroll', checkForScrolled))
       margin-left: auto;
     }
 
-    &__pop-menu-button {
-      display: initial;
-    }
-
+    &__pop-menu-button,
     &__pop-menu {
-      display: block;
+      display: initial;
     }
   }
 
@@ -222,6 +235,28 @@ onUnmounted(() => window.removeEventListener('scroll', checkForScrolled))
 
     &__pop-menu {
       transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: $break-phone-max) {
+  .header {
+    &__consultation-button {
+      display: none;
+    }
+
+    &__pop-menu-button {
+      margin-left: auto;
+    }
+  }
+
+  .pop-menu {
+    padding-bottom: 16px;
+
+    &__consultation-button {
+      --button-width: 100%;
+
+      display: block;
     }
   }
 }

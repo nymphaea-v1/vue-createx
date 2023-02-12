@@ -4,9 +4,11 @@
       <h6 class="benefits__sub-heading">
         Our benefits
       </h6>
+
       <h1 class="benefits__main-heading">
         That's how we do it
       </h1>
+
       <c-tab-menu
         v-slot="{ tab }: { tab: 1 | 2 | 3 | 4 }"
         v-model:active-tab="activeTab"
@@ -21,6 +23,7 @@
           <span class="tab__text">{{ benefits[tab].tabName }}</span>
         </span>
       </c-tab-menu>
+
       <transition-group name="list">
         <section
           :key="activeTab"
@@ -117,6 +120,7 @@ watch(activeTab, () => {
 
   &__main {
     display: flex;
+    gap: 40px;
     align-items: center;
     justify-content: space-between;
   }
@@ -124,10 +128,19 @@ watch(activeTab, () => {
   &__text-content {
     width: 495px;
   }
+
+  &__image {
+    max-width: 50vw;
+  }
 }
 
 .tab {
   @include text-icon;
+
+  justify-content: center;
+  min-height: 34px;
+
+  line-height: 120%;
 }
 
 .list-enter-from {
@@ -140,4 +153,27 @@ watch(activeTab, () => {
   transition: opacity 0.7s ease;
 }
 
+@media (max-width: $break-table-max) {
+  .benefits {
+    margin: 90px 0 60px;
+
+    &__main {
+      flex-direction: column-reverse;
+    }
+
+    &__text-content {
+      width: 85vw;
+
+      text-align: center;
+    }
+
+    &__image {
+      max-width: calc(50% + 100px);
+    }
+  }
+
+  .tab {
+    font-size: 14px;
+  }
+}
 </style>

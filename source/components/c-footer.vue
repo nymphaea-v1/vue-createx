@@ -7,61 +7,22 @@
             class="about__logo"
             src="~images/logo-light.svg"
           >
+
           <p class="about__text">
             {{ aboutText }}
           </p>
+
           <c-socials
             class="about__socials"
             :links="socialLinks"
           />
         </section>
-        <nav class="footer__site-map">
-          <h6>
-            site map
-          </h6>
-          <router-link
-            v-for="(link, text) in siteLinks"
-            :key="link"
-            :to="link"
-          >
-            {{ text }}
-          </router-link>
-        </nav>
-        <nav class="footer__courses">
-          <h6>
-            courses
-          </h6>
-          <router-link
-            v-for="(link, text) in courseLinks"
-            :key="link"
-            :to="link"
-          >
-            {{ text }}
-          </router-link>
-        </nav>
-        <nav class="footer__contact-us contact-us">
-          <h6 class="contact-us__heading">
-            contact us
-          </h6>
-          <p class="contact-us__item">
-            <c-icon
-              class="contact-us__icon"
-              name="phone"
-            />
-            <span class="contact-us__text">{{ phoneNumber }}</span>
-          </p>
-          <p class="contact-us__item">
-            <c-icon
-              class="contact-us__icon"
-              name="mail"
-            />
-            <span class="contact-us__text">{{ email }}</span>
-          </p>
-        </nav>
+
         <section class="footer__subscribe subscribe">
           <h6 class="subscribe__heading">
             sign up to our newsletter
           </h6>
+
           <label class="subscribe__input text-input">
             <div class="text-input__input-wrapper">
               <input
@@ -76,13 +37,64 @@
               />
             </div>
           </label>
+
           <p class="subscribe__notice">
             *Subscribe to our newsletter to receive communications and early updates from Createx SEO Agency.
           </p>
         </section>
+
+        <nav class="footer__site-map">
+          <h6>
+            site map
+          </h6>
+          <router-link
+            v-for="(link, text) in siteLinks"
+            :key="link"
+            :to="link"
+          >
+            {{ text }}
+          </router-link>
+        </nav>
+
+        <nav class="footer__courses">
+          <h6>
+            courses
+          </h6>
+          <router-link
+            v-for="(link, text) in courseLinks"
+            :key="link"
+            :to="link"
+          >
+            {{ text }}
+          </router-link>
+        </nav>
+
+        <nav class="footer__contact-us contact-us">
+          <h6 class="contact-us__heading">
+            contact us
+          </h6>
+
+          <p class="contact-us__item text-icon">
+            <c-icon
+              class="text-icon__icon"
+              name="phone"
+            />
+            <span class="text-icon__text">{{ phoneNumber }}</span>
+          </p>
+
+          <p class="contact-us__item text-icon">
+            <c-icon
+              class="text-icon__icon"
+              name="mail"
+            />
+            <span class="text-icon__text">{{ email }}</span>
+          </p>
+        </nav>
       </div>
+
       <div class="footer__bottom">
         <div class="footer__bottom-background" />
+
         <div class="copyright">
           <c-icon
             name="heart"
@@ -94,6 +106,7 @@
             target="_blank"
           >Concept by Createx Studio</a>
         </div>
+
         <a
           href="#app"
           class="footer__go-to-top-button"
@@ -145,23 +158,10 @@ const userEmail = ref('')
 </script>
 
 <style scoped lang="scss">
-@mixin footer-column {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  & h6 {
-    margin-bottom: 0;
-
-    color: #ffffff;
-    font-weight: 700;
-  }
-}
-
 .footer {
   position: relative;
 
-  height: 400px;
+  min-height: 400px;
 
   color: $gray500;
 
@@ -174,12 +174,30 @@ const userEmail = ref('')
   &__main {
     display: flex;
     justify-content: space-between;
-    height: 340px;
+    min-height: 340px;
     padding: 80px 0 60px;
 
     & > * {
-      @include footer-column;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      & h6 {
+        margin-bottom: 0;
+
+        color: #ffffff;
+        font-weight: 700;
+      }
     }
+  }
+
+  &__about {
+    width: 280px;
+  }
+
+  &__subscribe {
+    order: 1;
+    width: 286px;
   }
 
   &__bottom {
@@ -207,10 +225,7 @@ const userEmail = ref('')
 }
 
 .about {
-  @include footer-column;
-
   justify-content: space-between;
-  width: 280px;
   padding-bottom: 2px;
 
   &__logo {
@@ -231,17 +246,11 @@ const userEmail = ref('')
   }
 }
 
-.contact-us {
+.text-icon {
   @include text-icon;
 }
 
 .subscribe {
-  width: 286px;
-
-  &__heading {
-    margin-bottom: 15px !important;
-  }
-
   &__notice {
     @extend %text-extraextrasmall;
 
@@ -310,6 +319,45 @@ const userEmail = ref('')
     @include hoverable($gray600);
 
     color: $white;
+  }
+}
+
+@media (max-width: $break-laptop-max) {
+  .footer {
+    &__main {
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
+
+      & > * {
+        width: 90%;
+      }
+    }
+
+    &__subscribe {
+      order: 0;
+    }
+
+    &__site-map,
+    &__courses,
+    &__contact-us {
+      flex-flow: row wrap;
+      gap: 10px 30px;
+
+      & h6 {
+        width: 100%;
+      }
+    }
+
+    &__contact-us {
+      order: 1;
+    }
+  }
+
+  .about {
+    &__logo {
+      margin-bottom: 10px;
+    }
   }
 }
 </style>

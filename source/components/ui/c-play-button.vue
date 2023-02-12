@@ -39,7 +39,8 @@ $play-button-outline: rgba($primary, 0.12);
     display: inline-block;
     width: var(--play-button-size);
     height: var(--play-button-size);
-    margin: 16px 16px 16px 0;
+    margin: calc(var(--play-button-size) / 3);
+    margin-left: 0;
     border-radius: 50%;
 
     color: #ffffff;
@@ -51,7 +52,7 @@ $play-button-outline: rgba($primary, 0.12);
   }
 
   &:hover > .play-button__icon-wrapper {
-    outline: 16px solid $play-button-outline;
+    outline: calc(var(--play-button-size) / 3) solid $play-button-outline;
   }
 
   &__icon {

@@ -14,9 +14,3 @@ import CSubscription from 'components/c-subscription.vue'
 import CCourses from 'components/c-courses.vue'
 import CBenefits from 'components/c-benefits.vue'
 </script>
-
-<style scoped lang="scss">
-.intro {
-  padding-top: 170px;
-}
-</style>

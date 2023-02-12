@@ -46,6 +46,12 @@ h1 {
   font-weight: 900;
   font-size: 46px;
   line-height: 130%;
+
+  @media (max-width: $break-table-max) {
+    margin-bottom: 50px;
+
+    font-size: 40px;
+  }
 }
 
 h2 {
@@ -55,6 +61,12 @@ h2 {
   font-weight: 900;
   font-size: 32px;
   line-height: 130%;
+
+  @media (max-width: $break-table-max) {
+    margin-bottom: 20px;
+
+    font-size: 30px;
+  }
 }
 
 h3 {
@@ -75,4 +87,10 @@ h6 {
   line-height: 150%;
   letter-spacing: 1px;
   text-transform: uppercase;
+
+  @media (max-width: $break-table-max) {
+    margin-bottom: 6px;
+
+    font-size: 14px;
+  }
 }

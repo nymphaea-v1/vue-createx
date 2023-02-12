@@ -1,5 +1,8 @@
 <template>
-  <div class="course-card">
+  <div
+    class="course-card"
+    :class="`course-card_${orientation}`"
+  >
     <img
       :src="photo"
       :alt="course.author.name"
@@ -12,9 +15,11 @@
       >
         {{ course.type }}
       </span>
+
       <h5 class="course-card__name">
         {{ course.name }}
       </h5>
+
       <p class="course-card__bottom-line">
         <span class="course-card__price">${{ course.price }}</span>
         <span class="course-card__author">by {{ course.author.name }}</span>
@@ -26,7 +31,14 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-const props = defineProps<{ course: Course }>()
+interface Props {
+  course: Course
+  orientation?: 'horizontal' | 'vertical'
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  orientation: 'horizontal'
+})
 
 const photo = computed(() => require(`images/team/${props.course.author.photoFileName}`))
 const badgeClass = computed(() => {
@@ -37,8 +49,6 @@ const badgeClass = computed(() => {
 <style scoped lang="scss">
 .course-card {
   display: flex;
-  width: 600px;
-  height: 214px;
   border: 1px solid $gray300;
   border-radius: 4px;
 
@@ -58,17 +68,19 @@ const badgeClass = computed(() => {
   }
 
   &__image {
-    width: 40%;
-    max-width: 214px;
-    max-height: 100%;
     object-fit: cover;
+    object-position: top;
     aspect-ratio: 1;
   }
 
   &__main {
     display: flex;
     flex-direction: column;
-    padding: 32px;
+    gap: 20px;
+    justify-content: space-between;
+    min-width: 230px;
+    height: 150px;
+    margin: 32px;
   }
 
   &__name {
@@ -100,21 +112,63 @@ const badgeClass = computed(() => {
   }
 }
 
+.course-card_horizontal {
+  height: 214px;
+}
+
+.course-card_vertical {
+  flex-direction: column;
+  width: 390px;
+  height: 438px;
+
+  & .course-card {
+    &__image {
+      aspect-ratio: 39/24;
+
+      max-height: 240px;
+    }
+
+    &__main {
+      margin: 24px;
+    }
+  }
+}
+
 .badge {
   &_marketing {
-    @include badge(marketing);
+    @include badge($green);
   }
 
   &_management {
-    @include badge(management);
+    @include badge($blue);
   }
 
   &_hrrecruting {
-    @include badge(hrrecruting);
+    @include badge($yellow);
   }
 
   &_design {
-    @include badge(design);
+    @include badge($pink);
+  }
+}
+
+@media (max-width: $break-phone-max) {
+  .course-card_horizontal {
+    flex-direction: column;
+    width: 390px;
+    height: 438px;
+
+    & .course-card {
+      &__image {
+        aspect-ratio: 39/24;
+
+        max-height: 240px;
+      }
+
+      &__main {
+        margin: 24px;
+      }
+    }
   }
 }
 </style>

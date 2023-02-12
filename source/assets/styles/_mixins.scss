@@ -7,38 +7,29 @@
 }
 
 @mixin text-icon($iconSize: 16px, $gap: 8px) {
-  &__icon,
-  &__text {
-    vertical-align: middle;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px $gap;
+  align-content: center;
+  align-items: center;
+
+  text-align: center;
 
   &__icon {
     height: $iconSize;
-    margin-right: $gap;
   }
 }
 
-@mixin badge($type) {
+@mixin badge($color: $green) {
   @extend %text-small;
 
   display: inline-block;
   width: max-content;
   height: 21px;
-  margin-bottom: 20px;
   padding: 0 8px;
   border-radius: 4px;
 
   color: $white;
 
-  @if $type == marketing {
-    background-color: $green;
-  } @else if $type == management {
-    background-color: $blue;
-  } @else if $type == hrrecruting {
-    background-color: $yellow;
-  } @else if $type == design {
-    background-color: $pink;
-  } @else {
-    background-color: $green;
-  }
+  background-color: $color;
 }
