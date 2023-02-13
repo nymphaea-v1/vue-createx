@@ -58,15 +58,6 @@ const badgeClass = computed(() => {
     0 12px 10px -6px rgb(154 156 165 / 4%),
     0 4px 4px -4px rgb(30 33 44 / 3%);
 
-  &:hover {
-    box-shadow:
-      0 80px 80px -20px rgb(154 156 165 / 16%),
-      0 30px 24px -10px rgb(154 156 165 / 10%),
-      0 12px 10px -6px rgb(154 156 165 / 8%),
-      0 4px 4px -4px rgb(30 33 44 / 5%);
-    cursor: pointer;
-  }
-
   &__image {
     object-fit: cover;
     object-position: top;
@@ -149,6 +140,23 @@ const badgeClass = computed(() => {
 
   &_design {
     @include badge($pink);
+  }
+}
+
+.course-card:hover {
+  box-shadow:
+    0 80px 80px -20px rgb(154 156 165 / 16%),
+    0 30px 24px -10px rgb(154 156 165 / 10%),
+    0 12px 10px -6px rgb(154 156 165 / 8%),
+    0 4px 4px -4px rgb(30 33 44 / 5%);
+  cursor: pointer;
+
+  transition: box-shadow 0.3s ease;
+
+  & .course-card__name {
+    color: $primary;
+
+    transition: color 0.2s ease;
   }
 }
 

@@ -37,6 +37,8 @@ a {
 
 a:hover {
   color: $primary;
+
+  transition: color 0.2s ease;
 }
 
 h1 {

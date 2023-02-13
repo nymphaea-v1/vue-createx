@@ -35,7 +35,7 @@ const emitUpdate = (activeTab: number) => {
     border: 1px solid transparent;
     border-radius: 4px;
 
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 
     &:hover {
       color: $primary;

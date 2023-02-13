@@ -34,6 +34,8 @@ defineProps<{ links: {iconName: string, link: string }[]}>()
 
     &:hover {
       color: var(--icon-color-hover);
+
+      transition: color 0.2s ease;
     }
   }
 
