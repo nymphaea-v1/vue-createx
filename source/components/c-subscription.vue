@@ -19,11 +19,11 @@
       </div>
       <img
         class="subscription__background-image subscription__background-image_left"
-        src="~images/background-shapes/subscription.svg"
+        src="~~images/background-shapes/subscription.svg"
       >
       <img
         class="subscription__background-image subscription__background-image_right"
-        src="~images/background-shapes/subscription.svg"
+        src="~~images/background-shapes/subscription.svg"
       >
       <div class="subscription__background-color" />
     </div>
@@ -31,10 +31,11 @@
 </template>
 
 <script setup lang="ts">
-import CTextInput from 'components/ui/c-text-input.vue'
-import CButton from 'components/ui/c-button.vue'
+import CTextInput from '~components/ui/c-text-input.vue'
+import CButton from '~components/ui/c-button.vue'
 
 import { ref } from 'vue'
+
 const userEmail = ref('')
 </script>
 

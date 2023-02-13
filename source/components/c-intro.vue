@@ -5,7 +5,7 @@
       <div class="intro__main-content">
         <img
           class="intro__image"
-          src="~images/illustrations/intro.svg"
+          src="~~images/illustrations/intro.svg"
         >
 
         <div class="intro__title">
@@ -52,8 +52,8 @@
 </template>
 
 <script setup lang="ts">
-import cPlayButton from 'components/ui/c-play-button.vue'
-import cButton from 'components/ui/c-button.vue'
+import cPlayButton from '~components/ui/c-play-button.vue'
+import cButton from '~components/ui/c-button.vue'
 
 const statistics = {
   'Students graduaded': 1200,
@@ -89,7 +89,7 @@ const statistics = {
     height: 100%;
 
     background-image:
-      url("images/background-shapes/intro-background.svg"),
+      url("../assets/images/background-shapes/intro-background.svg"),
       $background-gradient;
     background-size: cover;
     opacity: 0.2;

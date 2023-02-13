@@ -9,6 +9,7 @@ const __distribution = path.resolve(__dirname, 'distribution')
 const __assets = path.resolve(__source, 'assets')
 
 const components = path.resolve(__source, 'components')
+const composables = path.resolve(__source, 'composables')
 const views = path.resolve(__source, 'views')
 const styles = path.resolve(__assets, 'styles')
 const icons = path.resolve(__assets, 'icons')
@@ -65,14 +66,22 @@ module.exports = {
         use: ['style-loader', 'css-loader', {
           loader: 'sass-loader',
           options: {
-            additionalData: "@import 'styles/shared';"
+            additionalData: "@import '~styles/shared';"
           }
         }]
       }
     ]
   },
   resolve: {
-    alias: { components, views, styles, icons, images },
+    alias: {
+      '@': __source,
+      '~components': components,
+      '~composables': composables,
+      '~views': views,
+      '~styles': styles,
+      '~icons': icons,
+      '~images': images
+    },
     extensions: ['.tsx', '.ts', '.js']
   },
   plugins: [

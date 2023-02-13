@@ -10,7 +10,7 @@
       >
         <img
           class="header__logo-image"
-          src="~images/logo.svg"
+          src="~~images/logo.svg"
         >
       </router-link>
 
@@ -76,9 +76,9 @@
 </template>
 
 <script setup lang="ts">
-import CButton from 'components/ui/c-button.vue'
-import CIcon from 'components/ui/c-icon.vue'
-import CMenuButton from 'components/ui/c-menu-button.vue'
+import CButton from '~components/ui/c-button.vue'
+import CIcon from '~components/ui/c-icon.vue'
+import CMenuButton from '~components/ui/c-menu-button.vue'
 
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 

@@ -44,8 +44,8 @@
 </template>
 
 <script setup lang="ts">
-import CTabMenu from 'components/ui/c-tab-menu.vue'
-import CIcon from 'components/ui/c-icon.vue'
+import CTabMenu from '~components/ui/c-tab-menu.vue'
+import CIcon from '~components/ui/c-icon.vue'
 
 import { ref, watch } from 'vue'
 
@@ -94,7 +94,7 @@ const benefits = ref({
 })
 
 watch(activeTab, () => {
-  import(`images/illustrations/${benefits.value[activeTab.value].imageName}`)
+  import(`~images/illustrations/${benefits.value[activeTab.value].imageName}`)
     .then((module) => {
       image.value = module.default
     })

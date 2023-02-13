@@ -13,7 +13,7 @@ import { computed } from 'vue'
 const props = defineProps<{ name: string }>()
 
 const icon = computed(() => {
-  return require(`icons/${props.name}.svg`).default
+  return require(`~icons/${props.name}.svg`).default
 })
 </script>
 

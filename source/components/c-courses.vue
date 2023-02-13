@@ -40,11 +40,12 @@
 </template>
 
 <script setup lang="ts">
-import CButton from 'components/ui/c-button.vue'
-import cCourseCard from 'components/ui/c-course-card.vue'
-import { useTestInfo } from '../composables/use-test-info'
+import CButton from '~components/ui/c-button.vue'
+import cCourseCard from '~components/ui/c-course-card.vue'
 
-const courses = useTestInfo().courses
+import { useTestInfo } from '~composables/use-test-info'
+
+const { courses } = useTestInfo()
 </script>
 
 <style scoped lang="scss">

@@ -3,7 +3,7 @@
     <div class="about__container">
       <img
         class="about__image"
-        src="~images/illustrations/about.png"
+        src="~~images/illustrations/about.png"
       >
       <div class="about__main">
         <h6 class="about__sub-heading">
@@ -28,8 +28,8 @@
 </template>
 
 <script setup lang="ts">
-import CButton from 'components/ui/c-button.vue'
-import CList from 'components/ui/c-list.vue'
+import CButton from '~components/ui/c-button.vue'
+import CList from '~components/ui/c-list.vue'
 
 const features = [
   'A fermentum in morbi pretium aliquam adipiscing donec tempus.',

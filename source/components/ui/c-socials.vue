@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import CIcon from 'components/ui/c-icon.vue'
+import CIcon from '~components/ui/c-icon.vue'
 
 defineProps<{ links: {iconName: string, link: string }[]}>()
 </script>

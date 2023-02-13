@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import CIcon from 'components/ui/c-icon.vue'
+import CIcon from '~components/ui/c-icon.vue'
 
 interface Props {
   size?: 'regular' | 'large'

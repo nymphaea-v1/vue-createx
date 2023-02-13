@@ -5,7 +5,7 @@
         <section class="footer__about about">
           <img
             class="about__logo"
-            src="~images/logo-light.svg"
+            src="~~images/logo-light.svg"
           >
 
           <p class="about__text">
@@ -117,8 +117,8 @@
 </template>
 
 <script setup lang="ts">
-import CSocials from 'components/ui/c-socials.vue'
-import CIcon from 'components/ui/c-icon.vue'
+import CSocials from '~components/ui/c-socials.vue'
+import CIcon from '~components/ui/c-icon.vue'
 
 import { ref } from 'vue'
 

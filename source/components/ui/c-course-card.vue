@@ -40,7 +40,7 @@ const props = withDefaults(defineProps<Props>(), {
   orientation: 'horizontal'
 })
 
-const photo = computed(() => require(`images/team/${props.course.author.photoFileName}`))
+const photo = computed(() => require(`~images/team/${props.course.author.photoFileName}`))
 const badgeClass = computed(() => {
   return `badge_${props.course.type.toLowerCase().replace(/[\s&]+/g, '')}`
 })
