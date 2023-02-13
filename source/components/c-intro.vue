@@ -1,6 +1,5 @@
 <template>
   <div class="intro">
-    <div class="intro__background" />
     <div class="intro__container">
       <div class="intro__main-content">
         <img
@@ -48,6 +47,7 @@
         </template>
       </ul>
     </div>
+    <div class="intro__background" />
   </div>
 </template>
 
@@ -65,7 +65,7 @@ const statistics = {
 
 <style scoped lang="scss">
 .intro {
-  position: relative;
+  @include colored-background;
 
   &__container {
     @extend %container;
@@ -77,22 +77,6 @@ const statistics = {
     padding-top: 90px;
     padding-bottom: 10px;
     overflow: hidden;
-  }
-
-  &__background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-
-    width: 100%;
-    height: 100%;
-
-    background-image:
-      url("../assets/images/background-shapes/intro-background.svg"),
-      $background-gradient;
-    background-size: cover;
-    opacity: 0.2;
   }
 
   &__main-content {
@@ -130,6 +114,12 @@ const statistics = {
 
   &__explore-button {
     --button-width: 200px;
+  }
+
+  &__background {
+    background-image:
+      url("../assets/images/background-shapes/intro-background.svg"),
+      $background-gradient;
   }
 }
 

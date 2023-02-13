@@ -25,8 +25,8 @@
         class="subscription__background-image subscription__background-image_right"
         src="~~images/background-shapes/subscription.svg"
       >
-      <div class="subscription__background-color" />
     </div>
+    <div class="subscription__background" />
   </div>
 </template>
 
@@ -41,7 +41,7 @@ const userEmail = ref('')
 
 <style scoped lang="scss">
 .subscription {
-  position: relative;
+  @include colored-background;
 
   padding: 120px 0 180px;
   overflow: hidden;
@@ -65,19 +65,6 @@ const userEmail = ref('')
 
   &__email-input {
     flex-grow: 1;
-  }
-
-  &__background-color {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-
-    width: 100%;
-    height: 100%;
-
-    background-image: $background-gradient;
-    opacity: 0.2;
   }
 
   &__background-image {
