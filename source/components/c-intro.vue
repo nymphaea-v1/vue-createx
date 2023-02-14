@@ -185,6 +185,8 @@ const statistics = {
   .statistic {
     &__number {
       margin-right: 0;
+
+      font-size: 40px;
     }
 
     &__feature {

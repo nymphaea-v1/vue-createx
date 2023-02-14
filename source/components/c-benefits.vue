@@ -10,7 +10,7 @@
       </h1>
 
       <c-tab-menu
-        v-slot="{ tab }: { tab: 1 | 2 | 3 | 4 }"
+        v-slot="{ tab }"
         v-model:active-tab="activeTab"
         class="benefits__tab-menu"
         :tabs="Object.keys(benefits).length"
@@ -49,10 +49,10 @@ import CIcon from '~components/ui/c-icon.vue'
 
 import { ref, watch } from 'vue'
 
-const activeTab = ref<1 | 2 | 3 | 4>(1)
+const activeTab = ref<number>(1)
 const image = ref(undefined)
 
-const benefits = ref({
+const benefits = ref<any>({
   1: {
     tabName: 'Experienced Tutors',
     iconName: 'star',
@@ -174,6 +174,12 @@ watch(activeTab, () => {
 
   .tab {
     font-size: 14px;
+  }
+}
+
+@media (max-width: $break-phone-max) {
+  .tab {
+    font-size: 12px;
   }
 }
 </style>

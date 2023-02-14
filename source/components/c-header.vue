@@ -159,13 +159,10 @@ onUnmounted(() => window.removeEventListener('scroll', checkForScrolled))
 .header_fixed {
   position: fixed;
 
+  background-color: $white;
   box-shadow: 0 4px 5px #{rgba($gray700, 0.3)};
 
   animation: 0.4s move-from-top ease;
-
-  & .header__container {
-    background-color: $white;
-  }
 }
 
 .login-button {
@@ -226,14 +223,14 @@ onUnmounted(() => window.removeEventListener('scroll', checkForScrolled))
     }
   }
 
-  .header_menu-opened .header {
-    &__container {
+  .header_menu-opened {
+    &.header {
       background-color: $white;
 
       transition: background-color 0s 0s;
     }
 
-    &__pop-menu {
+    & .header__pop-menu {
       transform: translateY(0);
     }
   }
