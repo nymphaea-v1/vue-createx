@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f241863e-227f-4134-9269-f24ec30fa27b/deploy-status)](https://vue-createx.netlify.app)
+
 # vue-createx
 
 Website from Figma design for online courses **Createx**.
@@ -32,5 +34,6 @@ npm run dev
 ```
 
 ## Links / Ссылки
+- [Demo on Netlify](https://vue-createx.netlify.app) / [Демо на Netlify](https://vue-createx.netlify.app)
 - [Figma](https://www.figma.com/file/2ZWX21Kfd6rLZVAm7hO8lz/Free-%231.-Online-course)
 - Website design was found [there](https://blog.maxgraph.ru/besplatnye-makety-figma-dlya-verstki-sajta-4/) / Макет был найден [здесь](https://blog.maxgraph.ru/besplatnye-makety-figma-dlya-verstki-sajta-4/)
